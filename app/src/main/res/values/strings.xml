@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SampleApplication</string>
+    <string name="full_name">First Name</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="address">Address</string>
+    <string name="contact_no">Contact Number</string>
+    <string name="sign_up">Sing Up</string>
+
+
+    <string name="signup_link">Don\'t have an account? <b>Sign Up</b></string>
+    <string name="signin_link">Already have an account? <b>Sign In</b></string>
+    <string name="Login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="description">Description</string>
+
+
+    <string name="submit">Submit</string>
+    <string name="nofile">NO Fruit Added</string>
+    <string name="addf">Add Fruit</string>
+
+    <string-array name="user_type">
+        <item>Select user type</item>
+        <item>Admin</item>
+        <item>Public</item>
+    </string-array>
+
+
+</resources>
