@@ -1,6 +1,8 @@
 package com.android.fruitpriceapp;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,8 +12,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.fruitpriceapp.model.MyModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -64,4 +68,23 @@ class BaseActivity extends AppCompatActivity {
 
     }
 
+
+    public void customAlertDialogue(String message) throws Resources.NotFoundException {
+        new AlertDialog.Builder(this)
+                .setTitle("Warning")
+                .setMessage(message)
+                .setIcon(R.drawable.ic_dialog_alert)
+                .setPositiveButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                //Do Something Here
+                                dialog.dismiss();
+
+                            }
+                        }).show();
+    }
 }

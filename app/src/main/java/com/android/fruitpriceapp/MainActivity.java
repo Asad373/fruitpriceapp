@@ -174,19 +174,33 @@ public class MainActivity extends BaseActivity {
         String desp =  dialoguebinding.dis.getText().toString();
         String name = dialoguebinding.name.getText().toString();
         String price = dialoguebinding.price.getText().toString();
-        loadingBar.show();
-       rootRef.getReference().child("Fruits").child(model.getId()).child("name").setValue(name);
-       rootRef.getReference().child("Fruits").child(model.getId()).child("price").setValue(price);
-       rootRef.getReference().child("Fruits").child(model.getId()).child("des").setValue(desp).addOnCompleteListener(new OnCompleteListener<Void>() {
-           @Override
-           public void onComplete(@NonNull Task<Void> task) {
-           getdata();
-           dialoguebinding.name.setText("");
-           dialoguebinding.dis.setText("");
-           dialoguebinding.price.setText("");
-           dialog.dismiss();
-           }
-       });
+
+        if(desp.equals("")){
+         customAlertDialogue("please Enetr Description");
+        }else{
+            if(name.equals("")){
+                customAlertDialogue("Please Enetr Fruit Name");
+            }else{
+                if(price.equals("")){
+                    customAlertDialogue("Please Eneter Price");
+                }else{
+                    loadingBar.show();
+                    rootRef.getReference().child("Fruits").child(model.getId()).child("name").setValue(name);
+                    rootRef.getReference().child("Fruits").child(model.getId()).child("price").setValue(price);
+                    rootRef.getReference().child("Fruits").child(model.getId()).child("des").setValue(desp).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            getdata();
+                            dialoguebinding.name.setText("");
+                            dialoguebinding.dis.setText("");
+                            dialoguebinding.price.setText("");
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            }
+        }
+
     }
 
     public  void addFruit(){
