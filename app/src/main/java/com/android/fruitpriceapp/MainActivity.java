@@ -81,6 +81,14 @@ public class MainActivity extends BaseActivity {
                 addFruit();
             }
 
+
+
+        });
+        dialoguebinding.submitC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
         });
         dialog.show();
         Window window = dialog.getWindow();
@@ -88,7 +96,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void SignOutUser() {
-        mAuth.signOut();
+        //mAuth.signOut();
         Intent intent = new Intent(this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//makesure user cant go back
         startActivity(intent);

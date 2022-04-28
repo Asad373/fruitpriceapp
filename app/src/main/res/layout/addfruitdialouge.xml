@@ -67,16 +67,37 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:layout_margin="@dimen/_10sdp"
+     >
+     <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/submit"
+         android:layout_width="0dp"
+         android:layout_weight="0.5"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/password_layout"
+         android:layout_margin="@dimen/_10sdp"
+         android:background="@color/primary"
+         android:text="@string/submit"
+         android:textAllCaps="false"
+         android:textColor="@android:color/white"
+         android:textSize="18sp" />
+     <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/submit_c"
+         android:layout_width="0dp"
+         android:layout_weight="0.5"
+         android:textAllCaps="false"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/password_layout"
+         android:layout_margin="@dimen/_10sdp"
+         android:background="@color/primary"
+         android:text="Cancel"
+         android:textColor="@android:color/white"
+         android:textSize="18sp" />
+ </LinearLayout>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/password_layout"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@color/primary"
-        android:text="@string/submit"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
 </LinearLayout>

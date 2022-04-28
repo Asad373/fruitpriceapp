@@ -36,7 +36,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         MyModel mitem = furitearray.get(position);
         holder.binding.nameF.setText(mitem.getName());
         holder.binding.desF.setText(mitem.getDes());
-        holder.binding.PriceF.setText(mitem.getPrice() + " " + "PKR" );
+        holder.binding.PriceF.setText(mitem.getPrice() + " " + "SAR" );
         holder.binding.number.setText(String.valueOf(position + 1));
 
         if(DataUtils.Usertype.equals("Admin")){

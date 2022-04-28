@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleApplication">
         <activity
-            android:name="com.android.fruitpriceapp.ViewActivity"
+            android:name=".ViewActivity"
             android:exported="false" />
         <activity
-            android:name="com.android.fruitpriceapp.SignupActivity"
+            android:name=".SignupActivity"
             android:exported="false" />
         <activity
-            android:name="com.android.fruitpriceapp.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.android.fruitpriceapp.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

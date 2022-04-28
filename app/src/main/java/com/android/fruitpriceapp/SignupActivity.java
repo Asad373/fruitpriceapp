@@ -49,9 +49,13 @@ public class SignupActivity extends BaseActivity {
                             if (task.isSuccessful()) {
                                 //loadingBar.dismiss();
                                 String UID = task.getResult().getUser().getUid();
+                                String name = binding.firstname.getText().toString() + " " + binding.lastname.getText().toString();
+                                String contact = binding.contacNumber.getText().toString();
+                                String email = binding.email.getText().toString();
+                                String Address = binding.address.getText().toString();
                                 //String Type = binding.type.getSelectedItem().toString();
                                 String Type = "Public";
-                                addUserType(UID, Type);
+                                addUserType(UID, Type, name,email,contact,Address);
                                 //startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                                 //finish();
                             } else {
@@ -68,7 +72,7 @@ public class SignupActivity extends BaseActivity {
         });
     }
 
-    private void addUserType(String id,  String type) {
+    private void addUserType(String id,  String type, String name, String email, String contactNumber, String Address) {
         //loadingBar.show();
         rootRef.getReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -76,6 +80,10 @@ public class SignupActivity extends BaseActivity {
                 HashMap<String, Object> UserMap = new HashMap<>();
                 UserMap.put("UID", id);
                 UserMap.put("userType", type);
+                UserMap.put("userName",name);
+                UserMap.put("Email", email);
+                UserMap.put("ContactNumber", contactNumber);
+                UserMap.put("Address",Address);
 
                 rootRef.getReference().child("UserType").child(id).updateChildren(UserMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
